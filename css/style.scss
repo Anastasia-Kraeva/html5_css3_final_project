@@ -31,15 +31,15 @@
     src: url('../fonts/my_fonts/montserrat-regular-webfont.woff2') format('woff2'),
          url('../fonts/my_fonts/montserrat-regular-webfont.woff') format('woff'),
          url('../fonts/my_fonts/montserrat-regular-webfont.ttf') format('ttf');
-    font-weight: normal; //400
+    font-weight: 400; 
     font-style: normal;
 
 }
 
-$background-color: #f4f5f8;
 
 * {
     font-family: 'Montserrat', Arial, sans-serif;
+    box-sizing: border-box;
 }
 a {
     text-decoration: none;
@@ -47,39 +47,202 @@ a {
 h1, h2, h3, h4 {
     font-family: 'Raleway', Arial, sans-serif;
     text-align: center;
+    font-weight: 400;//?
 }
+h2, h3 {
+    margin-top: 80px;
+    color: #555555;
+
+}
+// ::after, ::before {
+//     content: '';
+// }
+p {
+    font-weight: 300;
+    line-height: 28px;
+    color: #8c8c8c;
+}
+.button {
+    padding: 20px 45px;
+    background-color: #998675;
+    border-bottom: 4px solid #85725c;
+    border-left: 4px solid #85725c;
+    border-radius: 3px;
+    color: #fff;
+    align-self: center;
+    text-transform: uppercase;
+    font-family: "Myriad Pro";
+    font-size: 14px;
+    line-height: 23px;
+}
+.background {
+    background-image: linear-gradient(to right, #211b19 0%, #4e3427 100%);
+}
+
+
+
+
+
+//-----------------верхняя часть сайта -----------------------------------------------------------------------------
 .background-top {
     background-color: #383838;
     background-image: url(../img/mountain.png);
+    background-color: rgba(0, 0, 0, 0.5); //?
     background-position: center center;
     background-repeat: no-repeat;
-    padding: 380px 0;
+    padding: 60px 0 380px;
     background-size: cover;
 }
 .container {
     max-width: 1170px;
     margin: 0 auto;
 }
+
 .top {
-    color: #ffffff;
-
-    header {
-        max-width: 570px;
-        margin: 0 auto;
-//         .home {
-
-//         }
-//         nav {
-//             .nav {
-//             }
-//         }
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 150px;
+    
+    .arrow-left, .arrow-right {
+        width: 54px;
+        height: 54px;
+        border: 2px solid #d3c1ad;
+        background-color: transparent;
+        transform: rotate(45deg);
+        padding: 0;
     }
+    .arrow-left {
+        border-right: transparent;
+        border-top: transparent;
+
+        
+    }
+    .arrow-right {
+        border-left: transparent;
+        border-bottom: transparent;
+
+    }
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        color: #fff;
+    
+    }
+    .nav {
+        color: #fff;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 300;
+        margin-right: 30px;
+        vertical-align: middle;//?
+    }
+    .home {
+        font-family: Raleway;
+        font-size: 34px;
+        letter-spacing: -1.36px;
+        color: #fff;
+        .main_logos {
+            fill:#fff;
+        }
+        span {
+            vertical-align: middle;
+        }
+    }
+    tspan {//? 
+        fill: #fff;
+    }
+    .home:hover {
+        display: inline-block;
+        transform: scale(1.5);
+        transition-duration: 0.3s;
+        color: #c7b299;
+        .main_logos {
+            fill:#c7b299;
+        }
+    
+    tspan {
+        fill:#c7b299;
+    }
+        
+    // nav {
+        
+        .cart {
+            margin-left: 30px;
+        }
+        .nav:hover {
+            color: #c7b299;
+        }
+        .nav:visited {
+            color: #fff;
+        }
+    // }
+    nav:last-child {
+        margin-right: 0;
+    }
+    
+}
+.top-button {
+    position: absolute;
+    left: 50%;//?
+    bottom: 380px;
+}
+.top-button-mini {
+    width: 11px;
+    height: 11px;
+    border: 0px solid #000;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+
+}
+.top-button-mini-box {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;//?
+}
+.top-button:focus {
+    border: 2px solid #d3c1ad;
+    background-color: none;
+}
+.home {
+    color: #fff;
+    font-family: Raleway;
+    font-size: 34px;
+    letter-spacing: -1.36px;
+    color: #fff;
+    }
+  .main_logos {
+    fill:#fff;
+    color: #fff;
+  }
+  .home:hover {
+    display: inline-block;
+    transform: scale(1.5);
+    transition-duration: 0.3s;
+    color: #c7b299;
+    .main_logos {
+      fill:#c7b299;
+    }
+  }
+}
+
+
+header {
+    max-width: 570px;
+    margin: 0 auto;
+    padding-top: 320px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
     h1 {
-        // max-width: 570px;
-        // margin: 0 auto;
         font-family: 'Myriad Pro';
         font-size: 52px;
         font-weight: 400;
+        justify-content: center;
 
         span {
             font-family: 'Myriad Pro';
@@ -87,11 +250,508 @@ h1, h2, h3, h4 {
             font-weight: 400;
         }
     }
-//     .top-button {
-//     }
+}
+.top_text {
+    max-width: 570px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 380px;
+}
 
-    .top_text {
-        max-width: 570px;
+
+
+
+.servises {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 378px;
+  }
+.servises-item {
+    padding-top: 80px;
+    max-width: 266px;
+    display: flex;
+    flex-direction: column;
+
+    svg {
+        margin: 80px auto 30px;
+        
+    }
+    span {
+        background-position-x: center;
         text-align: center;
+    }
+    p{
+        text-align: center;
+    }
+    p::after {
+        content: '';
+        display: block;
+        background-color: #c7b299;
+        width: 70px;
+        height: 3px;//?
+        margin: 30px auto 0;
+    }
+}
+.servises-item:hover {
+    span {
+        color: #c7b299;
+        font-family: "Raleway - Semi Bold";
+        font-size: 22px;
+    }
+    .servises_icon {
+        fill: #c7b299;
+        align-items: center;
+        display: block;
+        display: block;
+
+    }
+    p::after {
+        content: '';
+        background-color: #c7b299;
+    }
+}
+
+
+
+.realization-ideas {
+    background-color: #fbfaf8;
+
+    h2 {
+    padding-top: 80px;
+    }
+    .realization-ideas_text {
+        max-width: 760px;
+        color: #8c8c8c;
+        font-size: 16px;
+    }
+    p{
+        text-align: center;
+        margin: 24px auto 40px;
+    }
+    .image-box {
+        position: relative;
+        max-width: 1230px;
+        height: 480px;
+    }
+    // .realization-ideas_img {
+        
+    // }
+    .realization-ideas_img1 {
+        position: absolute;
+        top: 80px;
+    }
+    .realization-ideas_img2 {
+        position: absolute;
+        left: 230px;
+        z-index: 1;
+    }
+    .realization-ideas_img3 {
+        position: absolute;
+        right: 0;
+        top: 80px;
+    }
+}
+
+
+
+
+
+.multipurpose {
+    height: 150px;
+    background-color: #f4f5f8;
+    padding: 50px 0;
+    
+    span {
+        color: #ffffff;
+        font-family: Raleway;
+        font-size: 28px;
+
+        span {
+            color: #c7b299;
+        }
+    }
+    .multipurpose_text {
+        color: #615855;
+        font-size: 18px;
+        margin: 2px 0 0;
+    }
+}
+.multipurpose_column {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.latest-projects {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .latest-projects_ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    // .header {
+    // }
+    .latest-projects_text {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .latest-projects_link {
+        margin-right: 10px;
+        padding: 10px 25px;//?
+        border: 1px solid #ebebeb;
+        border-radius: 3px;
+        color: #8c8c8c;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 21px;
+    }
+    .latest-projects_link:hover {
+        background-color: #998675;  
+        color: #fff;
+    }
+    .gallery {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .gallery_item {
+        display: inline-block;
+        img {
+            margin-bottom: -26px;
+        }
+    }
+    // .gallery_item:hover {
+
+    // }
+    .gallery_item_text {
+        background-color: #fbfaf8;
+        padding: 30px;
+        color: #c7b299;
+        font-family: Raleway;
+        font-size: 20px;
+        font-weight: 500;
+        position: relative;
+        span {
+            color: #d1d1d1;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 20px;
+            display: block;
+        }
+    }
+    .gallery_item_text::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-top: 10px solid #fff;
+        border-left: 10px solid #fff;
+        border: 10px solid #fff;
+        border-bottom: transparent;//?
+        border-right: transparent;//?
+        transform: rotate(45deg);
+        position: absolute;
+        top: -15px;
+    }
+
+    .latest-projects_button {
+        margin: 40px 0 80px;
+    }
+}
+
+
+
+
+//------------------ нижняя половина сайта ---------------------------------------------------------------------------------------------------------------------------------
+
+.video {
+    height: 705px;
+    background-image: url(../img/photo_video.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+
+    img:hover {
+        transform: rotate(360deg);
+        transition: 0.8s;
+    }
+}
+.video_header {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 500;
+}
+.video_text {
+    color: #ffffff;
+    text-align: center;
+    max-width: 555px;
+}
+
+
+.excellent {
+    min-height: 616px;
+    padding-left: 460px;
+
+    details {
+        margin-left: 50px;
+    }
+    summary {
+        margin-left: 50px;
+        display: list-item;
+        list-style-type: none;
+        div {
+            display: inline-block;
+        }
+    }
+    summary::-webkit-details-marker {
+        display: none;
+        //? как сделать маркер своими руками (не скачивать картинку, а отстилизовать как дивы summary-list и summary-arrow)
+    }
+    .summary-list {
+        width: 21px;
+        height: 21px;
+        border: transparent;
+        border-radius: 50%;
+        background-color: #c7b299;
+        margin-right: 30px;
+
+        
+        .summary_arrow {
+            width: 12px;
+            height: 12px;
+            transform: rotate(45deg);
+            border: 2px solid #fff;
+            border-left: transparent;
+            border-bottom: transparent;
+            align-self: center;//?
+            vertical-align: middle;
+        }
+    }
+
+}
+.excellent::before {
+    content: '';
+    background-image: url(../img/iPhone_in_hand.svg) no-repeat;//?
+    width: 40%;//?
+    height: 100%;//?
+}
+.excellent_header {
+    text-align: left;
+}
+.excellent_text {
+    max-width: 660px;
+}
+
+
+
+
+.statistics {
+    display: flex;
+    justify-content: space-around;
+
+    .statistics_text {
+        text-align: center;
+        color: #ffffff;
+        font-size: 48px;
+        font-weight: 400;
+        line-height: 36px;
+        margin: 65px 0 20px;
+    }
+        span {
+            color: #c7b299;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 20px;
+            text-transform: uppercase;
+            display: block;
+            text-align: center;
+        }
+        span::after {
+            content: '';
+            display: block;
+            background-color: #c7b299;
+            width: 30px;
+            height: 2px;
+            margin: 30px auto 60px;
+        }
+
+    .statistics_text::before {
+        display: block;
+        min-width: 45px;
+        min-height: 45px;
+        content: '';
+        background-repeat: no-repeat;
+        background-position: center 0;
+        margin-bottom: 30px;
+    }
+}
+.statistics-icon1::before {
+    background-image: url(../img/statistics_icon/icon_1.svg) /*no-repeat*/; //? как выглядит краткая форма записи характеристик (все время у меня что-то не так с ней)
+}
+.statistics-icon2::before {
+    background-image: url(../img/statistics_icon/icon_2.svg);
+}
+.statistics-icon3::before {
+    background-image: url(../img/statistics_icon/icon_3.svg);
+}
+.statistics-icon4::before {
+    background-image: url(../img/statistics_icon/icon_4.svg);
+}
+.statistics-icon5::before {
+    background-image: url(../img/statistics_icon/icon_5.svg);
+}
+
+
+// .recent {
+//     h3 {
+        
+//     }
+//     p {
+
+//     }
+//     figure {
+
+//         img {
+
+//         }
+//         figcaption {
+
+//             p {
+//                 span {
+
+//                 }
+//             }
+//             a {
+
+//             }
+//         }
+//     }
+// }
+
+
+.gray-span {
+    color: #959595;
+}
+footer {
+h4 {
+    margin-bottom: 30px;
+    display: inline-block;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
+p {
+    color: #555555;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+}
+}
+.footer_logos {
+    height: 490px;
+    background-image: url(../img/bg_footer.jpg), url(../img/logo-01.svg), url(../img/logo-02.svg), url(../img/logo-03.svg), url(../img/logo-04.svg);//?
+}
+.columns {
+    display: flex;
+    background-color: #191919;
+    padding: 107px 0 80px;
+}
+.column {
+    margin-right: 40px;
+//     h4 {
+
+//     }
+    p {
+        max-width: 270px;
+    }
+    a {
+        color: #d1d1d1;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+    }
+}
+.column:last-child {
+    margin-right: 0;
+}
+// .column_1 {
+//     p {
+
+//         span {
+
+//         }
+//     }
+//     a {
+
+//     }
+// }
+.column_2 {
+    
+    p {
+
+        span {
+            color: #c7b299;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 20px;
+        }
+    }
+}
+.column_3 {
+//     h4 {
+
+//     }
+    p {
+
+        span {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 20px;
+            color: #00bff3;
+        }
+        
+    }
+}
+
+.column_4 {
+    div {
+        max-width: 280px;
+
+        img {
+            margin-bottom: -1px;
+        }
+    }
+}
+.footer-bottom {
+    background-color: #111111;
+    padding: 45px 0 50px;
+    display: flex;
+    justify-content: space-between;//?
+
+    div {
+
+        a {
+            color: #555555;
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 20px;
+            /* Text style for "|   ,    |" */
+            color: #252525;//? как применить стили только к знакам припенания
+            
+        }
+        .beige {
+            color: #c7b299;
+            }
     }
 }
