@@ -74,11 +74,6 @@ p {
   background-image: linear-gradient(to right, #211b19 0%, #4e3427 100%);
 }
 
-body {
-  width: 1920px;
-  margin: 0 auto;
-}
-
 .container {
   max-width: 1170px;
   margin: 0 auto;
@@ -94,17 +89,7 @@ body {
 }
 
 .top {
-  height: 1000px;
   color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding: 0 150px;
 }
 
@@ -186,8 +171,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 1620px;
-  margin: 285px 0 380px;
+  margin: 285px 0 320px 0;
   position: relative;
 }
 
@@ -215,6 +199,7 @@ body {
 .slider .header {
   max-width: 570px;
   margin: 0 auto;
+  margin: 0 480px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -255,9 +240,9 @@ body {
 }
 
 .pagination {
-  position: absolute;
-  top: 970px;
-  left: 910px;
+  margin: 0 auto;
+  max-width: 120px;
+  padding-bottom: 60px;
 }
 
 .pagination_item {
@@ -267,6 +252,18 @@ body {
   border-radius: 50%;
   background-color: #fff;
   opacity: 0.5;
+  margin: 0 3px;
+}
+
+.pagination_item:last-child, .pagination_item:first-child {
+  margin: 0;
+}
+
+.pagination_item:hover {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #d3c1ad;
+  background-color: transparent;
 }
 
 .servises {
@@ -494,21 +491,6 @@ body {
   fill: #c7b299;
 }
 
-.latest-projects .gallery_item:hover .overlay {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  background: rgba(0, 0, 0, 0.5);
-}
-
 .latest-projects .gallery_item_text {
   background-color: #fbfaf8;
   padding: 30px;
@@ -539,6 +521,33 @@ body {
   margin: 40px 0 80px;
 }
 
+.gallery_item:hover .overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.gallery_item:hover .overlay #chain, .gallery_item:hover .overlay #loupe {
+  fill: #fff;
+}
+
+.gallery_item:hover .gallery_item_text {
+  background-color: #362f2d;
+}
+
+.gallery_item:hover .gallery_item_text::before {
+  border-bottom: 10px solid #362f2d;
+}
+
 .video {
   height: 705px;
   background-image: url(../img/photo_video.jpg);
@@ -566,10 +575,6 @@ body {
   transition: 0.8s;
 }
 
-.video a {
-  margin: 200px 0 -50px;
-}
-
 .video_header {
   color: #ffffff;
   font-size: 30px;
@@ -589,17 +594,19 @@ body {
   background-repeat: no-repeat;
 }
 
-.excellent details {
+.excellent ul {
   margin-left: 50px;
+  margin: 0;
 }
 
-.excellent summary {
+.excellent li {
+  margin: 0;
   display: list-item;
   list-style-type: none;
   margin: 1.5em 0 1em;
 }
 
-.excellent summary div {
+.excellent li div {
   display: inline-block;
 }
 
@@ -737,6 +744,7 @@ body {
 
 .recent .recent_posts-box figure .recet_img {
   position: relative;
+  margin-bottom: -6px;
 }
 
 .recent .recent_posts-box figure .recet_img img {
@@ -808,8 +816,8 @@ figure:hover figcaption span {
   color: #c7b299;
 }
 
-.gray-span {
-  color: #959595;
+.punteros {
+  padding: 40px auto 80px;
 }
 
 footer h4 {
@@ -880,6 +888,10 @@ footer .column_3 p span {
   color: #00bff3;
 }
 
+footer .column_3 p .gray-span {
+  color: #959595;
+}
+
 footer .column_3 .column_3:nth-child(2) {
   border: 1px solid #252525;
   border-right: none;
@@ -930,25 +942,39 @@ footer .footer-bottom div .beige {
   color: #c7b299;
 }
 
+.gray-span {
+  color: #959595;
+}
+
 @media screen and (max-width: 425px) {
-  * {
-    width: 100%;
+  div, section, article, h1, h2, h3, p, .top, .navigation, nav, .slider, .header, .servises {
+    max-width: 100%;
     display: block;
     margin: 0;
     padding: 0;
   }
+  a, span {
+    display: inline;
+  }
   img {
+    display: inline-block;
     max-width: 100%;
   }
   .top {
     padding: 0;
-    width: 100vw;
+    width: 100%;
   }
   .nav, .arrow-left, .arrow-right {
     display: none;
   }
   .servises {
     display: block;
+    margin: 0 auto;
+  }
+  .servises-item {
+    width: 90vw;
+    margin: 0;
+    padding: 0;
   }
   .excellent {
     background: none;

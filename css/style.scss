@@ -47,7 +47,7 @@ a {
 h1, h2, h3, h4 {
     font-family: 'Raleway', Arial, sans-serif;
     text-align: center;
-    font-weight: 400;//?
+    font-weight: 400;
 }
 h2, h3 {
     margin-top: 80px;
@@ -78,10 +78,6 @@ p {
 .background {
     background-image: linear-gradient(to right, #211b19 0%, #4e3427 100%);
 }
-body{
-    width: 1920px;
-    margin: 0 auto;
-}
 .container {
     max-width: 1170px;
     margin: 0 auto;
@@ -89,7 +85,7 @@ body{
 
 
 
-//-----------------верхняя часть сайта -----------------------------------------------------------------------------
+//-----------------верхняя часть сайта --------------------------------------------------------------------------------------------------------------
 .background-top {
     background-color: #1e1e24;
     background-image: url(../img/mountain.jpg);
@@ -99,11 +95,7 @@ body{
     background-size: cover;
 }
 .top {
-    height: 1000px;
     color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 0 150px;
 }
 .navigation {
@@ -167,8 +159,7 @@ body{
 .slider {
     display: flex;
     align-items: center;
-    max-width: 1620px;
-    margin: 285px 0 380px;
+    margin: 285px 0 320px 0;
     position: relative;
     
 
@@ -192,6 +183,7 @@ body{
     .header {
         max-width: 570px;
         margin: 0 auto;
+        margin: 0 480px;
         display: flex;
         flex-direction: column;
 
@@ -224,11 +216,9 @@ body{
     }
 }
 .pagination {
-    position: absolute;
-    top: 970px;
-    left: 910px;
-//     left: 50%;
-//     bottom: 40px;//?
+    margin: 0 auto;
+    max-width: 120px;
+    padding-bottom: 60px;
 }
 .pagination_item {
     width: 11px;
@@ -237,8 +227,18 @@ body{
     border-radius: 50%;
     background-color: #fff;
     opacity: 0.5;
+    margin: 0 3px;
 }
+.pagination_item:last-child, .pagination_item:first-child {
+    margin: 0;
 
+}
+.pagination_item:hover {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #d3c1ad;
+    background-color: transparent;
+}
 .servises {
     max-width: 1170px;
     margin: 0 auto;
@@ -270,7 +270,7 @@ body{
         display: block;
         background-color: #c7b299;
         width: 70px;
-        height: 3px;//?
+        height: 3px;
         margin: 30px auto 0;
     }
 }
@@ -382,7 +382,7 @@ body{
     }
     .latest-projects_link {
         margin-right: 10px;
-        padding: 10px 25px;//?
+        padding: 10px 25px;
         border: 1px solid #ebebeb;
         border-radius: 3px;
         color: #8c8c8c;
@@ -407,6 +407,7 @@ body{
             margin-bottom: -26px;
         }
     }
+
     .overlay {
         display: none;
         position: absolute;
@@ -419,19 +420,12 @@ body{
             margin: -20px 15px;
             fill: #fff;
         
-        #chain:hover, #loupe:hover {
-            fill: #c7b299;
+            #chain:hover, #loupe:hover {
+                fill: #c7b299;
+            }
         }
     }
-    }
-    .gallery_item:hover .overlay {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: 0.3s;
-        background: rgba(0, 0, 0, 0.5);
-        
-    }
+    
     .gallery_item_text {
         background-color: #fbfaf8;
         padding: 30px;
@@ -450,15 +444,8 @@ body{
     }
     .gallery_item_text::before {
         content: '';
-        // width: 0;
-        // height: 0;
-        // border-top: 10px solid #fff;
-        // border-left: 10px solid #fff;
         border: 20px solid transparent;
         border-bottom: 10px solid #fff;
-        // border-bottom: transparent;//?
-        // border-right: transparent;//?
-        // transform: rotate(45deg);
         position: absolute;
         top: -30px;
     }
@@ -467,11 +454,31 @@ body{
         margin: 40px 0 80px;
     }
 }
+.gallery_item:hover {
+    .overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        background: rgba(0, 0, 0, 0.5);
+
+        #chain, #loupe {
+            fill:#fff;
+        }
+    }
+    
+    .gallery_item_text {
+        background-color: #362f2d;
+    }
+    .gallery_item_text::before {
+        border-bottom: 10px solid #362f2d;
+    }
+
+}
 
 
 
-
-//------------------ нижняя половина сайта ---------------------------------------------------------------------------------------------------------------------------------
+//------------------ нижняя половина сайта --------------------------------------------------------------------------------------------------------------------
 
 .video {
     height: 705px;
@@ -489,9 +496,9 @@ body{
         transform: rotate(360deg);
         transition: 0.8s;
     }
-    a {
-        margin: 200px 0 -50px;
-    }
+    // a {
+    //     margin: 200px 0 -50px;
+    // }
 }
 .video_header {
     color: #ffffff;
@@ -511,10 +518,12 @@ body{
     background-image: url(../img/iPhone_in_hand.svg);
     background-repeat: no-repeat;
 
-    details {
+    ul {
         margin-left: 50px;
+        margin: 0;
     }
-    summary {
+    li {
+        margin: 0;
         display: list-item;
         list-style-type: none;
         margin: 1.5em 0 1em;
@@ -524,7 +533,7 @@ body{
     }
     summary::-webkit-details-marker {
         display: none;
-        //? как сделать маркер своими руками (не скачивать картинку, а отстилизовать как дивы summary-list и summary-arrow)
+        
     }
     .summary-list {
         width: 23px;
@@ -642,9 +651,11 @@ body{
             margin: 0;
             .recet_img {
                 position: relative;
+                margin-bottom: -6px;
+                
 
                 img {
-                    margin-bottom: -6px;//??
+                    margin-bottom: -6px;
                 }
                 .bg-hover {
                     background-color: rgba(17, 17, 17, 0.7);
@@ -679,7 +690,7 @@ body{
     }
 }
 .recent_posts-box:nth-child(2) {
-    margin: 0 15px;//??
+    margin: 0 15px;
 }
 figure:hover {
     margin: 0;
@@ -694,17 +705,6 @@ figure:hover {
             position: absolute;
             top: 0;
         }
-        // .bg-hover {
-        //     height: 220px;
-        //     width: 370px;
-        //     background-image: url(../img/photo-6.jpg);
-        //     background-color: rgba(17, 17, 17, 0.7);
-        //     position: absolute;
-        //     height: 100%;
-        //     width: 100%;
-        //     top: 0;
-        //     background-color: transparent;
-        // }
     }
     figcaption {
         background-color: #362f2d;
@@ -718,9 +718,10 @@ figure:hover {
     }
 }
 
-.gray-span {
-    color: #959595;
+.punteros {
+    padding: 40px auto 80px;
 }
+
 footer {
     h4 {
         margin-bottom: 30px;
@@ -739,7 +740,7 @@ footer {
 
     .footer_logos {
         height: 490px;
-        // background-image: url(../img/bg_footer.jpg), url(../img/logo-01.svg), url(../img/logo-02.svg), url(../img/logo-03.svg), url(../img/logo-04.svg);//? //??
+        // background-image: url(../img/bg_footer.jpg), url(../img/logo-01.svg), url(../img/logo-02.svg), url(../img/logo-03.svg), url(../img/logo-04.svg); 
     }
     .columns {
         display: flex;
@@ -788,7 +789,7 @@ footer {
                 line-height: 20px;
             }
         }
-        .column_2:nth-child(2) { //??
+        .column_2:nth-child(2) { 
             border: 1px solid #252525;
             border-right: none;
             border-left: none;
@@ -806,7 +807,9 @@ footer {
                 line-height: 20px;
                 color: #00bff3;
             }
-            
+            .gray-span {
+                color: #959595;
+            }
         }
         .column_3:nth-child(2) { 
             border: 1px solid #252525;
@@ -828,7 +831,7 @@ footer {
         background-color: #111111;
         padding: 45px 0 50px;
         display: flex;
-        justify-content: space-between;//?
+        justify-content: space-between;
 
         div {
             min-width: 400px;
@@ -853,31 +856,42 @@ footer {
         }
     }
 }
-
+.gray-span {
+    color: #959595;
+}
 
 @media screen and (max-width:425px) {
-    * {
-        width: 100%;
+    div, section, article, h1, h2, h3, p, .top, .navigation, nav, .slider, .header, .servises {
+        max-width: 100%;
         display: block;
         margin: 0;
         padding: 0;
     }
+    a, span {
+        display: inline;
+    }
     img {
+        display: inline-block;
         max-width: 100%
     }
 
 
     .top {
         padding: 0;
-        width: 100vw;
+        width: 100%;
     }
     .nav, .arrow-left, .arrow-right {
         display: none;
     }
     .servises {
         display: block;
+        margin: 0 auto;
     }
-
+    .servises-item {
+        width: 90vw;
+        margin: 0;
+        padding: 0;
+    }
 
     
     .excellent {
