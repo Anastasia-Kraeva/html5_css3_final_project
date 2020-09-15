@@ -54,8 +54,8 @@ h2, h3 {
     color: #555555;
 
 }
-// ::after, ::before {
-//     content: '';
+// ::after, ::before { //? из-за этого у каждого элемента появляются псевдоэлементы, которые только мешают. как задать "content: ''" только для существующих псевдоклассов?
+//     content: ''; 
 // }
 p {
     font-weight: 300;
@@ -85,35 +85,72 @@ p {
 
 
 
-//-----------------верхняя часть сайта --------------------------------------------------------------------------------------------------------------
+//----------------- верхняя часть сайта -----------------------------------------------------------------------------
+    
 .background-top {
     background-color: #1e1e24;
     background-image: url(../img/mountain.jpg);
     background-position: center center;
     background-repeat: no-repeat;
-    padding: 60px 0 380px;
     background-size: cover;
+    width: 100%;
 }
 .top {
+    padding: 0;
+    width: 100%;
     color: #fff;
-    padding: 0 150px;
+    padding: 0 13%;
 }
 .navigation {
     display: flex;
     justify-content: space-between;
     padding: 40px 0 0;
-    color: #fff;
+    align-items: center;
+
+    nav {
+        display: none;
+    }
+    .burger {
+        display: grid;
+        width: 40px;
+        grid-template-rows: repeat(4, 3px);
+        grid-gap: 4px;
+        span {
+            background-color: #fff;
+        }
+
+    }
+}
+.nav, .arrow-left, .arrow-right {
+    display: none;
+}  
+h1 {
+    margin-top: 40%;
+}
+
+
+.excellent {
+background: none;
+}
+
+
+
+
+@media screen and (min-width:1024px) {
+
+//----------------- верхняя часть сайта  -----------------------------------------------------------------------------
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0 0;
 
     .logo {
-        color: #fff;
         font-family: Raleway;
         font-size: 34px;
         letter-spacing: -1.36px;
-        color: #fff;
     
         .main_logos {
             fill:#fff;
-            color: #fff;
         }
     }
     .logo:hover {
@@ -125,11 +162,14 @@ p {
             fill:#c7b299;
         }
     }
+    .burger {
+        display: none;
+    }
 
     nav {
         display: flex;
         align-items: center;
-        margin-left: 215px;
+        justify-content: space-between;
     
         .nav {
             color: #fff;
@@ -159,8 +199,8 @@ p {
 .slider {
     display: flex;
     align-items: center;
-    margin: 285px 0 320px 0;
-    position: relative;
+    margin: 24% auto 27% auto;
+    max-width: 1530px;
     
 
     .arrow-left, .arrow-right {
@@ -181,29 +221,28 @@ p {
         border-bottom: transparent;
     }
     .header {
-        max-width: 570px;
+        max-width: 50%;
         margin: 0 auto;
-        margin: 0 480px;
+        // margin: 0 35%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
 
+        span {
+            font-family: 'Myriad Pro';
+            font-size: 36px;
+            font-weight: 400;
+        }
         .title {
             font-family: 'Myriad Pro';
             font-size: 52px;
             font-weight: 400;
             justify-content: center;
-
-            span {
-                font-family: 'Myriad Pro';
-                font-size: 36px;
-                font-weight: 400;
-            }
         }
 
         .top_text {
             max-width: 570px;
             text-align: center;
-            color: #fff;
         }
         .top-button {
             margin-top: 50px;
@@ -311,7 +350,7 @@ p {
     }
     .image-box {
         position: relative;
-        max-width: 1230px;
+        max-width: 100%;
         height: 480px;
     }
     // .realization-ideas_img {
@@ -323,7 +362,7 @@ p {
     }
     .realization-ideas_img2 {
         position: absolute;
-        left: 230px;
+        left: 19.6%;
         z-index: 1;
     }
     .realization-ideas_img3 {
@@ -478,7 +517,7 @@ p {
 
 
 
-//------------------ нижняя половина сайта --------------------------------------------------------------------------------------------------------------------
+//------------------ нижняя половина сайта -----------------------------------------------------------------------------
 
 .video {
     height: 705px;
@@ -486,12 +525,10 @@ p {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    vertical-align: middle;
     display: flex;
     flex-direction: column;
     align-items: center;
-    vertical-align: middle;
-
+    justify-content: center;
     img:hover {
         transform: rotate(360deg);
         transition: 0.8s;
@@ -499,6 +536,13 @@ p {
     // a {
     //     margin: 200px 0 -50px;
     // }
+    span {
+        color: #c7b299;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+    }
 }
 .video_header {
     color: #ffffff;
@@ -535,28 +579,25 @@ p {
         display: none;
         
     }
-    .summary-list {
-        width: 23px;
-        height: 23px;
-        border: transparent;
-        border-radius: 50%;
-        background-color: #c7b299;
-        margin-right: 30px;
-
-        
-        .summary_arrow {
-            width: 9px;
-            height: 9px;
-            transform: rotate(45deg);
-            border: 2px solid #fff;
-            border-left: transparent;
-            border-bottom: transparent;
-            display: inline-block;
-            margin-left: 6px;
-            margin-top: 6px;
-        }
-    }
-
+}
+.summary-list {
+    width: 23px;
+    height: 23px;
+    border: transparent;
+    border-radius: 50%;
+    background-color: #c7b299;
+    margin-right: 30px;
+}
+.summary_arrow {
+    width: 9px;
+    height: 9px;
+    transform: rotate(45deg);
+    border: 2px solid #fff;
+    border-left: transparent;
+    border-bottom: transparent;
+    display: inline-block;
+    margin-left: 6px;
+    margin-top: 6px;
 }
 .excellent_header {
     text-align: left;
@@ -649,6 +690,34 @@ p {
         display: flex;
         figure {
             margin: 0;
+            position: relative;
+            .date-box {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                text-align: center;
+                color: #ffffff;
+
+            }
+            .date {
+                font-family: Montserrat;
+                font-size: 24px;
+                font-weight: 300;
+                line-height: 20px;
+                border-radius: 3px 3px 0 0;
+                background-color: #363636;
+                padding: 9px 0;
+            }
+            .month {
+                font-family: Roboto;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 20px;
+                width: 50px;
+                height: 25px;
+                border-radius: 0 0 3px 3px;
+                background-color: #252525;
+            }
             .recet_img {
                 position: relative;
                 margin-bottom: -6px;
@@ -685,6 +754,13 @@ p {
                     font-weight: 300;
                     line-height: 20px;
                 }
+                a::after {
+                    content: '';
+                    display: inline-block;
+                    border: 4px solid transparent;
+                    border-left: 5px solid #c7b299;
+                    margin-left: 10px;
+                }
             }
         }
     }
@@ -694,6 +770,12 @@ p {
 }
 figure:hover {
     margin: 0;
+    .date {
+        background-color: #c7b299;
+    }
+    .month {
+        background-color: #a48d72;
+    }
     .recent_img {
         position: relative;
         
@@ -719,7 +801,29 @@ figure:hover {
 }
 
 .punteros {
-    padding: 40px auto 80px;
+    padding: 40px 0 80px;
+    margin: 0 auto;
+    max-width: 75px;
+
+    .punteros_list {
+        border: 2px solid #c7b299;
+        background-color: transparent;
+        display: inline-block;
+        margin: 0 5px;
+    }
+    .puntero {
+        border-color: #c7b299;
+        transform: rotate(45deg);
+        border-left: transparent;
+        border-bottom: transparent;
+        display: inline-block;
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+
+    .summary_arrow-left {
+        transform: rotate(230deg);
+    }
 }
 
 footer {
@@ -741,6 +845,8 @@ footer {
     .footer_logos {
         height: 490px;
         // background-image: url(../img/bg_footer.jpg), url(../img/logo-01.svg), url(../img/logo-02.svg), url(../img/logo-03.svg), url(../img/logo-04.svg); 
+        background-image: url(../img/bg_footer.jpg), url(../img/bg_footer.jpg); 
+
     }
     .columns {
         display: flex;
@@ -860,41 +966,4 @@ footer {
     color: #959595;
 }
 
-@media screen and (max-width:425px) {
-    div, section, article, h1, h2, h3, p, .top, .navigation, nav, .slider, .header, .servises {
-        max-width: 100%;
-        display: block;
-        margin: 0;
-        padding: 0;
-    }
-    a, span {
-        display: inline;
-    }
-    img {
-        display: inline-block;
-        max-width: 100%
-    }
-
-
-    .top {
-        padding: 0;
-        width: 100%;
-    }
-    .nav, .arrow-left, .arrow-right {
-        display: none;
-    }
-    .servises {
-        display: block;
-        margin: 0 auto;
-    }
-    .servises-item {
-        width: 90vw;
-        margin: 0;
-        padding: 0;
-    }
-
-    
-    .excellent {
-    background: none;
-    }
 }
