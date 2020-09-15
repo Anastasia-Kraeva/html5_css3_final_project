@@ -100,6 +100,9 @@ p {
     width: 100%;
     color: #fff;
     padding: 0 13%;
+    p {
+        margin: 0;
+    }
 }
 .navigation {
     display: flex;
@@ -125,7 +128,7 @@ p {
     display: none;
 }  
 h1 {
-    margin-top: 40%;
+    margin: 40% 0 20px;
 }
 
 
@@ -529,6 +532,10 @@ background: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    h3 {
+        margin-top: 44px;
+    }
     img:hover {
         transform: rotate(360deg);
         transition: 0.8s;
@@ -569,6 +576,7 @@ background: none;
     li {
         margin: 0;
         display: list-item;
+        display: inline-block;
         list-style-type: none;
         margin: 1.5em 0 1em;
         div {
@@ -581,6 +589,7 @@ background: none;
     }
 }
 .summary-list {
+    display: inline-block;
     width: 23px;
     height: 23px;
     border: transparent;
